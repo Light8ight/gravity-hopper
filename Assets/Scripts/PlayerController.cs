@@ -3,19 +3,25 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Text scoreText;
-
+    public float speed;
     public float topScore = 0.0f;
     public int score;
 
+    public GameObject leftButton;
+    public GameObject rightButton;
+    public Text scoreText;
+
     private float moveInput;
     private bool faceRight = true;
+    private bool isMoving = false;
+    private bool isMobilePlatform;
 
     private Rigidbody2D rb;
 
     private void Awake()
     {
+        isMobilePlatform = Application.isMobilePlatform;
+        CheckTheBuildPlatform();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -37,10 +43,36 @@ public class PlayerController : MonoBehaviour
         GoingBeyondTheScreen();
     }
 
+    private void CheckTheBuildPlatform()
+    {
+        if (isMobilePlatform)
+        {
+            leftButton.SetActive(true);
+            rightButton.SetActive(true);
+        }
+        else
+        {
+            leftButton.SetActive(false);
+            rightButton.SetActive(false);
+        }
+    }
+
     private void MoveHorizontally()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        float keyboardInput = Input.GetAxisRaw("Horizontal");
+        if (isMoving)
+        {
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        }
+        else if (keyboardInput != 0)
+        {
+            moveInput = keyboardInput;
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
     }
 
     private void Flip()
@@ -62,5 +94,22 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(-7, transform.position.y);
         }
+    }
+
+    public void OnRightButtonDown()
+    {
+        moveInput = 1f;
+        isMoving = true;
+    }
+
+    public void OnLeftButtonDown()
+    {
+        moveInput = -1f;
+        isMoving = true;
+    }
+
+    public void OnButtonUp()
+    {
+        isMoving = false;
     }
 }

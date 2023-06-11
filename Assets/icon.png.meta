@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e4d6acea06b40a4aa8523eb6ccbf4c9
+guid: a907fe8bc51bd5b4ca52fd4121e065b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -151,91 +151,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: StartButton
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 810
-        width: 450
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd487185c77c6034fb7f1b1b64380e4d
-      internalID: -1204951976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ExitButton
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 720
-        width: 450
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0ef506fd91360148885829ab2ced067
-      internalID: -303856560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OptionsButto
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 630
-        width: 450
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5408f0930b8300b45bcbb7aa1300a04a
-      internalID: -1929304295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainMenuButton
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 540
-        width: 450
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63b9459453736fb48842766a45e0fbb9
-      internalID: 1759993454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -246,11 +162,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      ExitButton: -303856560
-      MainMenuButton: 1759993454
-      OptionsButto: -1929304295
-      StartButton: -1204951976
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
