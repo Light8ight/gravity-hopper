@@ -6,13 +6,7 @@ public class HalfGravity : MonoBehaviour
 
     private AudioSource jumpSound;
 
-    private Vector2 initialGravity;
     private Vector2 halfGravity;
-
-    private void Awake()
-    {
-        initialGravity = Physics2D.gravity;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +17,7 @@ public class HalfGravity : MonoBehaviour
         if (collision.CompareTag("Player") && rb.velocity.y < 0)
         {
             Physics2D.gravity = halfGravity;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
             jumpSound.PlayOneShot(jumpSound.clip);
             Destroy(gameObject);
         }

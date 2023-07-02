@@ -34,7 +34,7 @@ public class PlusNinetyDegrees : MonoBehaviour
                 Camera.main.transform.position = new Vector3(0f, player.transform.position.y, -10f);
                 Camera.main.orthographicSize = initialOrthographicSize;
             }
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
             jumpSound.PlayOneShot(jumpSound.clip);
             Destroy(gameObject);
         }

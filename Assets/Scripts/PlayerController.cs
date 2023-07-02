@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public float topScore = 0.0f;
-    public int score;
+    public float score = 0.0f;
+    public int topScore;
 
     public GameObject leftButton;
     public GameObject rightButton;
@@ -27,13 +27,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.y > 0 && transform.position.y > topScore)
+        if (rb.velocity.y > 0 && transform.position.y > score)
         {
-            topScore = transform.position.y;
+            score = transform.position.y;
         }
 
-        score = (int)Mathf.Round(topScore);
-        scoreText.text = "Score: " + score.ToString();
+        topScore = (int)Mathf.Round(score);
+        scoreText.text = string.Format("Score: {0}", topScore);
+
+        if (PlayerPrefs.GetInt("highestScore") < topScore)
+        {
+            PlayerPrefs.SetInt("highestScore", topScore);
+        }
     }
 
     private void FixedUpdate()
@@ -62,12 +67,12 @@ public class PlayerController : MonoBehaviour
         float keyboardInput = Input.GetAxisRaw("Horizontal");
         if (isMoving)
         {
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            rb.velocity = new Vector2(moveInput * speed * Time.deltaTime, rb.velocity.y);
         }
         else if (keyboardInput != 0)
         {
             moveInput = keyboardInput;
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            rb.velocity = new Vector2(moveInput * speed * Time.deltaTime, rb.velocity.y);
         }
         else
         {

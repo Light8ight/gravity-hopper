@@ -338,12 +338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec7e3066661b2649a737f4265e5f8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 14
-  scoreText: {fileID: 1389357540}
+  speed: 680
+  score: 0
+  topScore: 0
   leftButton: {fileID: 1823903353}
   rightButton: {fileID: 1010079297}
-  topScore: 0
-  score: 0
+  scoreText: {fileID: 1389357540}
 --- !u!82 &93057413
 AudioSource:
   m_ObjectHideFlags: 0
@@ -451,7 +451,6 @@ GameObject:
   - component: {fileID: 192694175}
   - component: {fileID: 192694177}
   - component: {fileID: 192694176}
-  - component: {fileID: 192694178}
   m_Layer: 5
   m_Name: LossPanel
   m_TagString: Untagged
@@ -501,8 +500,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 73b25087642d15f4db8ec10792157249, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -519,19 +518,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192694174}
   m_CullTransparentMesh: 1
---- !u!114 &192694178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192694174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd24af84d5837b4bbeba53ab8472085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topScoreText: {fileID: 1941241887}
 --- !u!1 &434856533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,8 +1704,9 @@ MonoBehaviour:
   - {fileID: 6932878231676637616, guid: 6c51adeb9ef810e4987eae19d221cd87, type: 3}
   - {fileID: 1030773685720448215, guid: 5584a8c515e6f39448301fb16074af84, type: 3}
   - {fileID: 3177283245217328865, guid: fbb74b4bfaaf69545ade715f4b978736, type: 3}
-  lossPanel: {fileID: 192694178}
+  lossPanel: {fileID: 192694174}
   player: {fileID: 93057409}
+  topScoreText: {fileID: 1941241887}
   playerControllerScript: {fileID: 93057412}
   spawnDistance: 30
   platformWidth: 3
@@ -1736,7 +1723,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4.9}
+  m_Offset: {x: 0, y: -4.93}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1747,7 +1734,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 0.1}
+  m_Size: {x: 30, y: 0.2}
   m_EdgeRadius: 0
 --- !u!4 &2128376437
 Transform:

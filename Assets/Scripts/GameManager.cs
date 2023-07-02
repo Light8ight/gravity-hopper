@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] platformPrefabs;
-    [SerializeField] private LossPanel lossPanel;
+    [SerializeField] private GameObject lossPanel;
     [SerializeField] private Transform player;
+    [SerializeField] private Text topScoreText;
     [SerializeField] private PlayerController playerControllerScript;
     [SerializeField] private float spawnDistance = 30f;
     [SerializeField] private float platformWidth = 3f;
@@ -27,7 +29,8 @@ public class GameManager : MonoBehaviour
         {
             Physics2D.gravity = initialGravity;
             Time.timeScale = 0f;
-            lossPanel.Setup(playerControllerScript.score);
+            lossPanel.SetActive(true);
+            topScoreText.text = "Top score:\n" + playerControllerScript.topScore.ToString();
         }
         else
         {

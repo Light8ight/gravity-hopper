@@ -12,7 +12,7 @@ public class DefaultAndSpring : MonoBehaviour
         jumpSound = collision.GetComponent<AudioSource>();
         if (collision.CompareTag("Player") && rb.velocity.y < 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
             jumpSound.PlayOneShot(jumpSound.clip);
         }
     }
